@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     var imageCount = 0
     var imageArray :[UIImage] = []
     
+    var timer: NSTimer = NSTimer()
+    
     @IBOutlet weak var image: UIImageView!
     
     @IBAction func OnButtonPressed(sender: AnyObject) {
@@ -37,9 +39,17 @@ class ViewController: UIViewController {
         imageArray.append(frame4)
         imageArray.append(frame5)
         
-        // Do any additional setup after loading the view, typically from a nib.
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("result"), userInfo: nil, repeats: true)
     }
 
+    func result() {
+        if(++imageCount>4) {
+            imageCount = 0
+        }
+        
+        image.image = imageArray[imageCount]
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
