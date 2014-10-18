@@ -9,9 +9,34 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var imageCount = 0
+    var imageArray :[UIImage] = []
+    
+    @IBOutlet weak var image: UIImageView!
+    
+    @IBAction func OnButtonPressed(sender: AnyObject) {
+        if(++imageCount>4) {
+            imageCount = 0
+        }
+        
+        image.image = imageArray[imageCount]
+    }
+    
+    @IBOutlet weak var onButtonPressed: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        var frame1 = UIImage(named: "frame1")
+        var frame2 = UIImage(named: "frame2")
+        var frame3 = UIImage(named: "frame3")
+        var frame4 = UIImage(named: "frame4")
+        var frame5 = UIImage(named: "frame5")
+        
+        imageArray.append(frame1)
+        imageArray.append(frame2)
+        imageArray.append(frame3)
+        imageArray.append(frame4)
+        imageArray.append(frame5)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
