@@ -46,12 +46,12 @@ class ViewController: UIViewController {
     }
 
     override func viewDidLayoutSubviews() {
-        image.center = CGPointMake(image.center.x+400, image.center.y+200)
+        image.alpha = 0
     }
     
     override func viewDidAppear(animated: Bool) {
         UIView.animateWithDuration(1, animations: {
-            self.image.center = CGPointMake(self.image.center.x-400, self.image.center.y-200)
+            self.image.alpha = 1
         })
     }
     
