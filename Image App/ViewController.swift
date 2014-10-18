@@ -45,6 +45,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewDidLayoutSubviews() {
+        image.center = CGPointMake(image.center.x-400, image.center.y)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        UIView.animateWithDuration(1, animations: {
+            self.image.center = CGPointMake(self.image.center.x+400, self.image.center.y)
+        })
+    }
+    
 
 }
 
