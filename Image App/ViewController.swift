@@ -46,12 +46,12 @@ class ViewController: UIViewController {
     }
 
     override func viewDidLayoutSubviews() {
-        image.alpha = 0
+        image.frame = CGRectMake(100, 20, 0, 0)
     }
     
     override func viewDidAppear(animated: Bool) {
         UIView.animateWithDuration(1, animations: {
-            self.image.alpha = 1
+            self.image.frame = CGRectMake(100, 20, 100, 200)
         })
     }
     
